@@ -156,8 +156,7 @@ void getCommand(int& count, char** commands) {
 		cin >> commands[count];
 		count++;
 	}
-	char rest[5]=" ";
-	cin.getline(rest, 5);//清空cin的缓存区
+	getchar();//清空剩余的回车
 }
 
 //用户登陆
@@ -256,8 +255,7 @@ bool func_user(char** commands){
 	cout << "username: " << commands[1] << endl << "password: " << commands[2] << endl;
 	char s;
 	cin >> s;
-	char rest[10];
-	cin.getline(rest, 10);
+	getchar();//清除回车符号
 	if (s == 'y'){
 		ofstream ofile("userinfo.txt");
 		if(!ofile) return false;
